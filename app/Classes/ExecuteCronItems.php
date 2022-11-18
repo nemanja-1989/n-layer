@@ -6,15 +6,24 @@ use App\Services\RedisService;
 
 class ExecuteCronItems {
 
-    public function run(\App\Services\HttpService $service, \App\Traits\GetHttpService $trait)
+    public $service;
+
+    public function __construct()
     {
-        $redis = RedisService::getRedis();
-        return $trait::getData($service(MOVIE_URI . 'items'));
-        return $redis->set('/v1/items', $trait::getData($service(MOVIE_URI . 'items')));
-        if($redis->get('/v1/items')) {
-                return 11;
-        }else {
-            return 12;
+        $this->service = new \App\Services\HttpService('http://filmapi.loopiarnd.com/items');
+        $this->redis = RedisService::getRedis();
+    }
+
+    public function run()
+    { 
+        $this->redis->set('/v1/items', json_encode($this->service->sendRequest()));
+        $this->setItemsItem();
+    }
+
+    private function setItemsItem() {
+        $items = json_decode($this->redis->get('/v1/items'), TRUE);
+        foreach($items as $item) {
+            $this->redis->set('/v1/items/' . $item['id'] , json_encode($item));
         }
     }
 }

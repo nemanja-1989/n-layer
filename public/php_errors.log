@@ -1,0 +1,9 @@
+[18-Nov-2022 10:53:50 Europe/Berlin] PHP Warning:  require(./vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/n-layer/public/index.php on line 2
+[18-Nov-2022 10:53:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './vendor/autoload.php' (include_path='.:/usr/share/php') in /var/www/html/n-layer/public/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/n-layer/public/index.php on line 2
+[18-Nov-2022 10:54:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Client" not found in /var/www/html/n-layer/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/n-layer/public/index.php on line 5
