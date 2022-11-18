@@ -1,0 +1,22 @@
+{
+    "name": "zeal/n-layer-loopia",
+    "description": "APIs",
+    "type": "project",
+    "require": {
+        "smottt/wideimage": "^1.1.4",
+        "guzzlehttp/guzzle": "^7.5",
+        "predis/predis": "^2.0"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "zeaL Nemanja"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "./app"
+        }
+    },
+    "minimum-stability": "stable"
+}
