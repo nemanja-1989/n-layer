@@ -9,7 +9,8 @@ use App\Constants\Constants;
 </head>
 <body>
         <?php 
-            $redis = RedisService::getRedis();
+            $redis = new RedisService();
+            $redis = $redis->getService();
             $item = json_decode($redis->get('/v1/items/' . $_GET['id']), TRUE);
         ?>
         <?php if (!isset($item)): ?>

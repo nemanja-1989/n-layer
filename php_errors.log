@@ -183,3 +183,75 @@ Stack trace:
 #9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
 #10 {main}
   thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 14:34:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Services\RedisService::getRedis() in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:15
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 15
+[18-Nov-2022 14:35:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Services\RedisService::set() in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:20
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 20
+[18-Nov-2022 14:35:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Services\RedisService::set() in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:20
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 20
+[18-Nov-2022 14:35:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Services\RedisService::set() in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:20
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 20
+[18-Nov-2022 14:35:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Services\RedisService::set() in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:20
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 20
+[18-Nov-2022 14:35:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Services\RedisService::set() in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:20
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 20
+[18-Nov-2022 14:37:19 Europe/Berlin] PHP Warning:  Undefined property: App\Classes\ExecuteCronItems::$redis in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getService() on null in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Warning:  Undefined property: App\Classes\ExecuteCronItems::$redis in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getService() on null in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Warning:  Undefined property: App\Classes\ExecuteCronItems::$redis in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getService() on null in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Warning:  Undefined property: App\Classes\ExecuteCronItems::$redis in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getService() on null in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Warning:  Undefined property: App\Classes\ExecuteCronItems::$redis in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getService() on null in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Warning:  Undefined property: App\Classes\ExecuteCronItems::$redis in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getService() on null in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:21 Europe/Berlin] PHP Warning:  Undefined property: App\Classes\ExecuteCronItems::$redis in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 14:37:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getService() on null in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14

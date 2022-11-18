@@ -9,7 +9,8 @@ use App\Services\RedisService;
 <body>
     <div>
         <?php 
-            $redis = RedisService::getRedis();
+            $redis = new RedisService();
+            $redis = $redis->getService();
             $items = json_decode($redis->get('/v1/items'), TRUE);
         ?>
             <?php if (!count($items)): ?>

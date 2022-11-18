@@ -2,9 +2,10 @@
 
 namespace App\Services;
 
-class RedisService {
+use \App\Interface\ServiceInterface;
+class RedisService implements ServiceInterface{
     
-    public static function getRedis() {
+    public function getService() {
         return new \Predis\Client();
     }
 }

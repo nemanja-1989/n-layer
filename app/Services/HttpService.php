@@ -5,25 +5,22 @@ namespace App\Services;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use \App\Constants\Constants;
+use \App\Interface\ServiceInterface;
 
-class HttpService {
+class HttpService implements ServiceInterface {
     private $url;
-    private $timeout;
-    private $header;
 
-    public function __construct(string $url, int $timeout = 0, array $header = [])
+    public function __construct(string $url)
     {
         $this->url = $url;
-        $this->timeout = $timeout;
-        $this->header = $header;
         $this->client = new Client([
             'base_uri' => null,
             'timeout' => 0,
             'allow_redirects' => false,
-        ]);;
+        ]);
     }
 
-    public function sendRequest()
+    public function getService()
     {
         $response =  $this->client->request('GET', $this->url, $this->sendRequestHeader());
         if ($response->getStatusCode() !== 200){

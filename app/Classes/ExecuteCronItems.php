@@ -7,17 +7,16 @@ use \App\Constants\Constants;
 
 class ExecuteCronItems {
 
-    public $service;
-
     public function __construct()
     {
         $this->service = new \App\Services\HttpService(Constants::MOVIE_URI);
-        $this->redis = RedisService::getRedis();
+        $this->redis_service = new RedisService();
+        $this->redis = $this->redis_service->getService();
     }
 
     public function run()
     { 
-        $this->redis->set('/v1/items', json_encode($this->service->sendRequest()));
+        $this->redis->set('/v1/items', json_encode($this->service->getService()));
         $this->setItemsItem();
     }
 
