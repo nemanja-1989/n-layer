@@ -4,6 +4,7 @@ namespace App\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use \App\Constants\Constants;
 
 class HttpService {
     private $url;
@@ -24,15 +25,19 @@ class HttpService {
 
     public function sendRequest()
     {
-        $response =  $this->client->request('GET', $this->url, [
-            RequestOptions::HEADERS => [
-                'Accept' => 'application/json',
-                'X-Authorization' => 'Bearer username' . ":" . base64_encode('password')
-            ]
-        ]);
+        $response =  $this->client->request('GET', $this->url, $this->sendRequestHeader());
         if ($response->getStatusCode() !== 200){
             throw new \Exception($response->getBody());
         }
         return json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
+    }
+
+    private function sendRequestHeader() {
+        return [
+            RequestOptions::HEADERS => [
+                'Accept' => 'application/json',
+                'X-Authorization' => 'Bearer ' . Constants::MOVIE_API_USERNAME . ":" . base64_encode(Constants::MOVIE_API_PASSWORD),
+            ]
+        ];
     }
 }

@@ -1,0 +1,185 @@
+[18-Nov-2022 13:48:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:13
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 13
+[18-Nov-2022 13:49:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:49:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:49:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:49:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:49:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:49:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:49:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:49:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "App\Classes\MOVIE_URI" in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php:14
+Stack trace:
+#0 /var/www/html/n-layer/kernel.php(6): App\Classes\ExecuteCronItems->__construct()
+#1 {main}
+  thrown in /var/www/html/n-layer/app/Classes/ExecuteCronItems.php on line 14
+[18-Nov-2022 13:57:04 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:05 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:06 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:06 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:06 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:07 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:07 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:08 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:08 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Nov-2022 13:57:08 Europe/Berlin] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `GET http://filmapi.loopiarnd.com/` resulted in a `404 Not Found` response in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Middleware.php(69): GuzzleHttp\Exception\RequestException::create()
+#1 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/FulfilledPromise.php(41): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#2 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/TaskQueue.php(48): GuzzleHttp\Promise\FulfilledPromise::GuzzleHttp\Promise\{closure}()
+#3 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(248): GuzzleHttp\Promise\TaskQueue->run()
+#4 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(224): GuzzleHttp\Promise\Promise->invokeWaitFn()
+#5 /var/www/html/n-layer/vendor/guzzlehttp/promises/src/Promise.php(62): GuzzleHttp\Promise\Promise->waitIfPending()
+#6 /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Client.php(187): GuzzleHttp\Promise\Promise->wait()
+#7 /var/www/html/n-layer/app/Services/HttpService.php(28): GuzzleHttp\Client->request()
+#8 /var/www/html/n-layer/app/Classes/ExecuteCronItems.php(20): App\Services\HttpService->sendRequest()
+#9 /var/www/html/n-layer/kernel.php(7): App\Classes\ExecuteCronItems->run()
+#10 {main}
+  thrown in /var/www/html/n-layer/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113

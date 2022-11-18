@@ -3,6 +3,7 @@
 namespace App\Classes;
 
 use App\Services\RedisService;
+use \App\Constants\Constants;
 
 class ExecuteCronItems {
 
@@ -10,7 +11,7 @@ class ExecuteCronItems {
 
     public function __construct()
     {
-        $this->service = new \App\Services\HttpService('http://filmapi.loopiarnd.com/items');
+        $this->service = new \App\Services\HttpService(Constants::MOVIE_URI);
         $this->redis = RedisService::getRedis();
     }
 
