@@ -1,10 +1,10 @@
 <?php 
 
-namespace App\Classes;
+namespace App\Console;
 
 use \App\Classes\Items\ExecuteItem;
 
-class Execute {
+class Schedule {
 
     public function __construct() {
         $this->item = new ExecuteItem();

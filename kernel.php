@@ -2,8 +2,8 @@
 
 require './vendor/autoload.php';
 
-use \App\Classes\Execute;
+use \App\Console\Schedule;
 
-$exe = new Execute();
+$exe = new Schedule();
 $exe->run();
 ?>
