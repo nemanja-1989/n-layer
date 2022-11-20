@@ -12,3 +12,4 @@ yarn-error.log
 /.idea
 /.vscode
 /app/Constants/Constants.php
+php_errors.log

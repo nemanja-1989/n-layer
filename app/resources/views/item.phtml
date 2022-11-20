@@ -1,7 +1,5 @@
 <?php 
-require './vendor/autoload.php';
 use App\Services\RedisService;
-use App\Constants\Constants;
 ?>
 <!DOCTYPE html>
 <head>
@@ -11,7 +9,10 @@ use App\Constants\Constants;
         <?php 
             $redis = new RedisService();
             $redis = $redis->getService();
-            $item = json_decode($redis->get('/v1/items/' . $_GET['id']), TRUE);
+            $item = null;
+            if(isset($_GET['id'])) {
+                $item = json_decode($redis->get('/v1/items/' . $_GET['id']), TRUE);
+            }
         ?>
         <?php if (!isset($item)): ?>
             <b>No item found!</b>
@@ -19,8 +20,8 @@ use App\Constants\Constants;
             <div class="item">
                 <dl>
                     <dt>ID: <dd><?php echo $item['id'] ?>
-                    <dt>Title: <dd><?php echo $item['title'] ?>
-                    <dt>Synopsis: <dd><?php echo $item['synopsis'] ?>
+                    <dt>Title: <dd><?php echo $item['title']?>
+                    <dt>Synopsis: <dd><?php echo $item['synopsis']?>
                 </dl>
             </div>
         <?php endif ?>

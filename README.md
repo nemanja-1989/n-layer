@@ -15,3 +15,8 @@
 
 # Without cron
 - just start /kernel.php to execute cron script object
+
+# Routes
+- /
+- /v1/items
+- /v1/item
