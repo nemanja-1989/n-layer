@@ -6,6 +6,9 @@ use App\Services\RedisService;
 use \App\Classes\Items\Item;
 class RedisItems {
 
+    private Item $item;
+    private RedisService $redis;
+
     public function __construct() {
         $this->item = new Item();
         $this->redis = new RedisService;
