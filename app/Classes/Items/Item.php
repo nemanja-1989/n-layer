@@ -2,12 +2,11 @@
 
 namespace App\Classes\Items;
 
-use \App\Services\HttpService;
-use \App\Constants\Constants;
+use \App\Classes\Items\ClientItems;
 class Item {
 
     public function __construct() {
-        $this->client = new HttpService(Constants::MOVIE_URI);
+        $this->client = new ClientItems;
     }
 
     public function getItems() {

@@ -4,7 +4,7 @@ namespace App\Classes\Items;
 
 use App\Services\RedisService;
 use \App\Classes\Items\Item;
-class RedisItems  {
+class RedisItems {
 
     public function __construct() {
         $this->item = new Item();
