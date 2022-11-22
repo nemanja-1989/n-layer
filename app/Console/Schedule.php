@@ -2,20 +2,22 @@
 
 namespace App\Console;
 
-use \App\Classes\Items\Item;
+use \App\Classes\Items\ItemsCache;
 
 class Schedule {
 
-    protected Item $item;
-
-    public function __construct(Item $item) {
-        $this->item = $item;
+    public function __construct
+    (
+        protected ItemsCache $items
+    )   
+    {
+        $this->items = $items;
     }
     /**
      * @classes prepare for crontab
      */
     private function schedule() {
-        $this->item->redis();
+        $this->items->redis();
     }
 
     /**
