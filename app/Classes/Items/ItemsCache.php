@@ -35,6 +35,6 @@ class ItemsCache {
     }
 
     public function redis() {
-        return $this->cacheItems() ?? throw new \Exception("Redis crushed!");
+        return $this->cacheItems();
     }
 }

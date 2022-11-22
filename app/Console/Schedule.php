@@ -24,7 +24,7 @@ class Schedule {
      * @crontab executable command
      */
     public function run() {
-        return $this->schedule() ?? throw new \Exception("Cron crushed!");
+        return $this->schedule();
     }
     
 }   
