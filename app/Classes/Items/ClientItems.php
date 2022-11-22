@@ -8,10 +8,8 @@ use \App\Constants\Constants;
 
 class ClientItems {
 
-    private HttpService $client;
-
-    public function __construct() {
-        $this->client = new HttpService;
+    public function __construct(protected HttpService $client) {
+        $this->client = $client;
     }
 
      public function getService()
