@@ -14,11 +14,15 @@ class ClientItems {
 
      public function getService()
     {
-        $response =  $this->client->getService()->request('GET', Constants::MOVIE_URI, $this->sendRequestHeader());
-        if ($response->getStatusCode() !== 200){
-            throw new \Exception($response->getBody());
+        try{
+            $response =  $this->client->getService()->request('GET', Constants::MOVIE_URI, $this->sendRequestHeader());
+            if ($response->getStatusCode() !== 200){
+                throw new \Exception($response->getBody());
+            }
+            return json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
+        }catch(\Exception $e) {
+            return $e->getMessage();
         }
-        return json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
     }
 
     private function sendRequestHeader() {
@@ -27,6 +31,7 @@ class ClientItems {
                 'Accept' => 'application/json',
                 'X-Authorization' => 'Bearer ' . Constants::MOVIE_API_USERNAME . ":" . base64_encode(Constants::MOVIE_API_PASSWORD),
             ]
-        ];
+        ]??
+        throw new \Exception("Request header crushed!");
     }
 }

@@ -13,7 +13,6 @@ class ItemsGet {
     }
 
     public function getItems() {
-        
-        return json_encode($this->client->getService());
+        return json_encode($this->client->getService()) ?? throw new \Exception("Client crushed!");
     } 
 }

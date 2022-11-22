@@ -16,17 +16,25 @@ class ItemsCache {
     }
 
     private function cacheItems() {
-        $this->iterateItems(json_decode($this->items->getItems(), TRUE));
-        $this->redis->getService()->set('/v1/items', $this->items->getItems());
-    }
-
-    private function iterateItems($items) {
-        foreach($items as $item) {
-            $this->redis->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
+        try{
+            $this->iterateItems(json_decode($this->items->getItems(), TRUE));
+            $this->redis->getService()->set('/v1/items', $this->items->getItems());
+        }catch(\Exception $e) {
+            return $e->getMessage();
         }
     }
 
+    private function iterateItems($items) {
+        try{
+            foreach($items as $item) {
+                $this->redis->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
+            }
+        }catch(\Exception $e) {
+            return $e->getMessage();
+        } 
+    }
+
     public function redis() {
-        return $this->cacheItems();
+        return $this->cacheItems() ?? throw new \Exception("Redis crushed!");
     }
 }
