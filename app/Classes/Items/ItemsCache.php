@@ -2,10 +2,13 @@
 
 namespace App\Classes\Items;
 
+require dirname(__DIR__) . '/../Interface/RedisDependecy.php';
+
+use App\Interface\RedisDependency;
 use App\Services\RedisService;
 use App\Classes\Items\ItemsGet;
 
-class ItemsCache {
+class ItemsCache implements RedisDependency {
 
     protected RedisService $redis;
     protected ItemsGet $items;
@@ -13,6 +16,10 @@ class ItemsCache {
     public function __construct(RedisService $redis, ItemsGet $items) {
         $this->redis = $redis;
         $this->items = $items;
+    }
+
+    public function redisDependencyClassesMethodsForCaching() {
+        return $this->redis();
     }
 
     private function cacheItems() {
@@ -34,7 +41,7 @@ class ItemsCache {
         } 
     }
 
-    public function redis() {
+    private function redis() {
         return $this->cacheItems();
     }
 }

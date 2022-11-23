@@ -2,29 +2,18 @@
 
 namespace App\Console;
 
-use \App\Classes\Items\ItemsCache;
+use \App\Interface\RedisDependency;
 
-class Schedule {
+class Schedule extends ScheduleDependency {
 
-    public function __construct
-    (
-        protected ItemsCache $items
-    )   
-    {
-        $this->items = $items;
-    }
-    /**
-     * @classes prepare for crontab
-     */
-    private function schedule() {
-        $this->items->redis();
-    }
+    public function run(RedisDependency $redisDependency) {
+        $redisDependency->redisDependencyClassesMethodsForCaching();
+    } 
 
-    /**
-     * @crontab executable command
-     */
-    public function run() {
-        return $this->schedule();
+    public function exe() {
+        $classesForSchedule = $this->dependencyClassesForSchedule();
+        foreach($classesForSchedule as $class) {
+            $this->run($class);
+        }
     }
-    
 }   
