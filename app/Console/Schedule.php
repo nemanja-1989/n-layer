@@ -6,7 +6,7 @@ use \App\Interface\RedisDependency;
 
 class Schedule extends ScheduleDependency {
 
-    public function run(RedisDependency $redisDependency) {
+    private function run(RedisDependency $redisDependency) {
         $redisDependency->redisDependencyClassesMethodsForCaching();
     } 
 
