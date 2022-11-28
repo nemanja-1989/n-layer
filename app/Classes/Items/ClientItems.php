@@ -5,6 +5,7 @@ namespace App\Classes\Items;
 use App\Services\HttpService;
 use GuzzleHttp\RequestOptions;
 use \App\Constants\Constants;
+use http\QueryString;
 
 class ClientItems {
 
@@ -25,13 +26,12 @@ class ClientItems {
         }
     }
 
-    private function sendRequestHeader() {
+    private function sendRequestHeader() :array  {
         return [
             RequestOptions::HEADERS => [
                 'Accept' => 'application/json',
                 'X-Authorization' => 'Bearer ' . Constants::MOVIE_API_USERNAME . ":" . base64_encode(Constants::MOVIE_API_PASSWORD),
             ]
-        ]??
-        throw new \Exception("Request header crushed!");
+        ];
     }
 }

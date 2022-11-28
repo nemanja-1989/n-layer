@@ -28,13 +28,9 @@ class ItemsCache implements RedisDependency {
     }
 
     private function iterateItems($items) {
-        try{
-            foreach($items as $item) {
-                $this->redisService->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
-            }
-        }catch(\Exception $e) {
-            return $e->getMessage();
-        } 
+        foreach($items as $item) {
+            $this->redisService->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
+        }
     }
 
     private function redis() :string|null {

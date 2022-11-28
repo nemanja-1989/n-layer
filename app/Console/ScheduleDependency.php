@@ -10,18 +10,9 @@ use \App\Services\RedisService;
 
 class ScheduleDependency {
 
-    private array $scheduleClasses;
-
-    public function __construct() {
-        $this->scheduleClasses = [];
-        // Items
-        $this->itemsForCache = new ItemsCache(new RedisService, new ItemsGet(new ClientItems(new HttpService)));
-    }
-
     public function dependencyClassesForSchedule() :array|\Exception {
-        return $this->scheduleClasses = [
-            $this->itemsForCache
-        ] ?? 
-        throw new \Exception("Schedule Classes injection Interface broken!");
+        return [
+            new ItemsCache(new RedisService, new ItemsGet(new ClientItems(new HttpService))),
+        ];
     }   
 }   
