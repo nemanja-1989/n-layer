@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/../n-layer/vendor/autoload.php';
 
 use App\Classes\Items\HandlerItem;
 use App\Classes\Movies\Movies;

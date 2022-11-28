@@ -10,22 +10,12 @@ use \App\Services\RedisService;
 
 class ScheduleDependency {
 
-    public array $scheduleClasses;
+    private array $scheduleClasses;
 
     public function __construct() {
         $this->scheduleClasses = [];
-        /**
-         * services
-         */
-        $this->httpService = new HttpService;
-        $this->redisService = new RedisService;
-        /**
-         * classes
-         */
         // Items
-        $this->clientItems = new ClientItems($this->httpService);
-        $this->items = new ItemsGet($this->clientItems);
-        $this->itemsForCache = new ItemsCache($this->redisService, $this->items);
+        $this->itemsForCache = new ItemsCache(new RedisService, new ItemsGet(new ClientItems(new HttpService)));
     }
 
     public function dependencyClassesForSchedule() {
