@@ -6,7 +6,6 @@ require dirname(__DIR__) . '/../Interface/RedisDependecy.php';
 
 use App\Interface\RedisDependency;
 use App\Services\RedisService;
-use App\Classes\Items\ItemsGet;
 
 class ItemsCache implements RedisDependency {
 

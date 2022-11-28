@@ -5,8 +5,6 @@ namespace App\Classes\Items;
 use App\Services\HttpService;
 use GuzzleHttp\RequestOptions;
 use \App\Constants\Constants;
-use http\Env\Response;
-use http\Header;
 
 class ClientItems {
 
