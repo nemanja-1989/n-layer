@@ -10,7 +10,7 @@ class ItemsGet {
         $this->client = $client;
     }
 
-    public function getItems() {
+    public function getItems() : string|\Exception {
         return json_encode($this->client->getService()) ?? throw new \Exception("Client crushed!");
     } 
 }

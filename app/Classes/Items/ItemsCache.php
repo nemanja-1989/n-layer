@@ -15,7 +15,7 @@ class ItemsCache implements RedisDependency {
         $this->items = $items;
     }
 
-    public function redisDependencyClassesMethodsForCaching() {
+    public function redisDependencyClassesMethodsForCaching() :string|null {
         return $this->redis();
     }
 
@@ -38,7 +38,7 @@ class ItemsCache implements RedisDependency {
         } 
     }
 
-    private function redis() {
+    private function redis() :string|null {
         return $this->cacheItems();
     }
 }

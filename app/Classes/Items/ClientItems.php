@@ -12,7 +12,7 @@ class ClientItems {
         $this->client = $client;
     }
 
-     public function getService()
+     public function getService() :array
     {
         try{
             $response =  $this->client->getService()->request('GET', Constants::MOVIE_URI, $this->sendRequestHeader());
