@@ -2,7 +2,7 @@
 
 namespace App\Classes\Items;
 
-require dirname(__DIR__) . '/../Interface/RedisDependecy.php';
+require dirname(__DIR__) . '/../Interface/RedisDependency.php';
 
 use App\Interface\RedisDependency;
 use App\Services\RedisService;
