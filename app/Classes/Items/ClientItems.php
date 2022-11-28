@@ -5,6 +5,8 @@ namespace App\Classes\Items;
 use App\Services\HttpService;
 use GuzzleHttp\RequestOptions;
 use \App\Constants\Constants;
+use http\Env\Response;
+use http\Header;
 
 class ClientItems {
 
@@ -12,7 +14,7 @@ class ClientItems {
         $this->client = $client;
     }
 
-     public function getService() :array
+     public function getService() :array|string
     {
         try{
             $response =  $this->client->getService()->request('GET', Constants::MOVIE_URI, $this->sendRequestHeader());

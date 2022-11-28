@@ -18,7 +18,7 @@ class ScheduleDependency {
         $this->itemsForCache = new ItemsCache(new RedisService, new ItemsGet(new ClientItems(new HttpService)));
     }
 
-    public function dependencyClassesForSchedule() {
+    public function dependencyClassesForSchedule() :array|\Exception {
         return $this->scheduleClasses = [
             $this->itemsForCache
         ] ?? 
