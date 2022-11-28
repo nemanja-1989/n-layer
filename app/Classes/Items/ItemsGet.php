@@ -2,8 +2,6 @@
 
 namespace App\Classes\Items;
 
-use \App\Classes\Items\ClientItems;
-
 class ItemsGet {
 
     protected ClientItems $client;

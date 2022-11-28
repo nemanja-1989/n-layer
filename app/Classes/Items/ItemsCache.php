@@ -10,11 +10,8 @@ use App\Classes\Items\ItemsGet;
 
 class ItemsCache implements RedisDependency {
 
-    protected RedisService $redis;
-    protected ItemsGet $items;
-
-    public function __construct(RedisService $redis, ItemsGet $items) {
-        $this->redis = $redis;
+    public function __construct(protected RedisService $redisService, protected ItemsGet $items) {
+        $this->redisService = $redisService;
         $this->items = $items;
     }
 
@@ -25,7 +22,7 @@ class ItemsCache implements RedisDependency {
     private function cacheItems() {
         try{
             $this->iterateItems(json_decode($this->items->getItems(), TRUE));
-            $this->redis->getService()->set('/v1/items', $this->items->getItems());
+            $this->redisService->getService()->set('/v1/items', $this->items->getItems());
         }catch(\Exception $e) {
             return $e->getMessage();
         }
@@ -34,7 +31,7 @@ class ItemsCache implements RedisDependency {
     private function iterateItems($items) {
         try{
             foreach($items as $item) {
-                $this->redis->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
+                $this->redisService->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
             }
         }catch(\Exception $e) {
             return $e->getMessage();
