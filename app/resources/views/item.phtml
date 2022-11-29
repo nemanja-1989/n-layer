@@ -1,19 +1,19 @@
-<?php 
+<?php
+use App\Classes\Items\ItemsGet;
+use App\Services\FastCacheService;
 use App\Services\RedisService;
+use App\Classes\Items\ClientItems;
+use App\Services\HttpService;
 ?>
 <!DOCTYPE html>
 <head>
     <title>Movie items</title>
 </head>
 <body>
-        <?php 
-            $redis = new RedisService();
-            $redis = $redis->getService();
-            $item = null;
-            if(isset($_GET['id'])) {
-                $item = json_decode($redis->get('/v1/items/' . $_GET['id']), TRUE);
-            }
-        ?>
+<?php
+$item = new \App\Controllers\ItemsController(new RedisService, new FastCacheService, new ItemsGet(new ClientItems(new HttpService)));
+$item = $item->getSingleItem($_GET['id']);
+?>
         <?php if (!isset($item)): ?>
             <b>No item found!</b>
         <?php else: ?>

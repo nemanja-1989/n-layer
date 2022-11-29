@@ -43,4 +43,18 @@ class ItemsController {
         }
         return \json_decode($items, TRUE);
     }
+
+    public function getSingleItem($id) :array {
+        $item = null;
+        if($this->redisService->getService()->get('/v1/items/' . $id) !== null) {
+            $item = $this->redisService->getService()->get('/v1/items/' . $id);
+        }
+        else if($this->fastCacheService->getService()->get('movies' . $id) !== null) {
+            $item = $this->fastCacheService->getService()->get('movies' . $id);
+        }
+        else {
+            $item = $this->itemsGet->getSingleItems($id);
+        }
+        return \json_decode($item, TRUE);
+    }
 }

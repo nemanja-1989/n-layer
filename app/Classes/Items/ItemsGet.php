@@ -21,5 +21,9 @@ class ItemsGet {
      */
     public function getItems() : string|\Exception {
         return json_encode($this->client->getService());
-    } 
+    }
+
+    public function getSingleItems($id) : string|\Exception {
+        return json_encode($this->client->getServiceSingle($id));
+    }
 }

@@ -32,6 +32,19 @@ class ClientItems {
         }
     }
 
+    public function getServiceSingle($id) :array|string
+    {
+        try{
+            $response =  $this->client->getService()->request('GET', Constants::MOVIE_URI . '/' . $id, $this->sendRequestHeader());
+            if ($response->getStatusCode() !== 200){
+                throw new \Exception($response->getBody());
+            }
+            return \json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
+        }catch(\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
     /**
      * @return \string[][]
      */
