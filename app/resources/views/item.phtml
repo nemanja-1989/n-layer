@@ -7,12 +7,12 @@ use App\Services\HttpService;
 ?>
 <!DOCTYPE html>
 <head>
-    <title>Movie items</title>
+    <title>Movie item</title>
 </head>
 <body>
 <?php
-$item = new \App\Controllers\ItemsController(new RedisService, new FastCacheService, new ItemsGet(new ClientItems(new HttpService)));
-$item = $item->getSingleItem($_GET['id']);
+    $item = new \App\Controllers\ItemsController(new RedisService, new FastCacheService, new ItemsGet(new ClientItems(new HttpService)));
+    $item = $item->getSingleItem($_GET['id']);
 ?>
         <?php if (!isset($item)): ?>
             <b>No item found!</b>
