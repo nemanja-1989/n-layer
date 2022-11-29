@@ -44,6 +44,11 @@ class ItemsController {
         return \json_decode($items, TRUE);
     }
 
+    /**
+     * @param $id
+     * @return array
+     * @throws \Phpfastcache\Exceptions\PhpfastcacheSimpleCacheException
+     */
     public function getSingleItem($id) :array {
         $item = null;
         if($this->redisService->getService()->get('/v1/items/' . $id) !== null) {
