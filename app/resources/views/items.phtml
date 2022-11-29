@@ -25,7 +25,7 @@ use App\Services\HttpService;
                             <dt>ID: <dd><?php echo $item['id'] ?>
                             <dt>Title: <dd><?php echo $item['title'] ?>
                             <dt>Synopsis: <dd><?php echo $item['synopsis'] ?>
-                            <dt><a href="/v1/item?id=<?php echo $item['id'] ?>">Details: </a>
+                            <dt><a href="/v1/item?token=<?php echo $item['id'] ?>">Details: </a>
                     </div>
                 <?php endforeach; ?>
             <?php endif ?>

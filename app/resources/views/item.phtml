@@ -12,7 +12,7 @@ use App\Services\HttpService;
 <body>
 <?php
     $item = new \App\Controllers\ItemsController(new RedisService, new FastCacheService, new ItemsGet(new ClientItems(new HttpService)));
-    $item = $item->getSingleItem($_GET['id']);
+    $item = $item->getSingleItem($_GET['token']);
 ?>
         <?php if (!isset($item)): ?>
             <b>No item found!</b>
