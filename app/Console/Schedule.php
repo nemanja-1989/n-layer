@@ -6,11 +6,18 @@ use \App\Interface\RedisDependency;
 
 class Schedule extends ScheduleDependency {
 
-    private function run(RedisDependency $redisDependency) {
+    /**
+     * @param RedisDependency $redisDependency
+     * @return void
+     */
+    private function run(RedisDependency $redisDependency) :void {
         $redisDependency->redisDependencyClassesMethodsForCaching();
-    } 
+    }
 
-    public function exe() {
+    /**
+     * @return void
+     */
+    public function exe() :void {
         $classesForSchedule = $this->dependencyClassesForSchedule();
         foreach($classesForSchedule as $class) {
             $this->run($class);

@@ -10,6 +10,9 @@ use \App\Services\RedisService;
 
 class ScheduleDependency {
 
+    /**
+     * @return array|\Exception
+     */
     public function dependencyClassesForSchedule() :array|\Exception {
         return [
             new ItemsCache(new RedisService, new ItemsGet(new ClientItems(new HttpService))),

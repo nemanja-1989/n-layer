@@ -8,10 +8,17 @@ use \App\Constants\Constants;
 
 class ClientItems {
 
+    /**
+     * @param HttpService $client
+     */
     public function __construct(protected HttpService $client) {
         $this->client = $client;
     }
 
+    /**
+     * @return array|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
      public function getService() :array|string
     {
         try{
@@ -19,12 +26,15 @@ class ClientItems {
             if ($response->getStatusCode() !== 200){
                 throw new \Exception($response->getBody());
             }
-            return json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
+            return \json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
         }catch(\Exception $e) {
             return $e->getMessage();
         }
     }
 
+    /**
+     * @return \string[][]
+     */
     private function sendRequestHeader() :array  {
         return [
             RequestOptions::HEADERS => [
