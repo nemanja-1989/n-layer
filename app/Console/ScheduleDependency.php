@@ -15,13 +15,13 @@ class ScheduleDependency {
     /**
      * @return array|\Exception
      */
-    public function dependencyClassesForScheduleRedis() :array|\Exception {
+    protected function dependencyClassesForScheduleRedis() :array|\Exception {
         return [
             new ItemsCache(new RedisService, new ItemsGet(new ClientItems(new HttpService))),
         ];
     }
 
-    public function dependencyClassesForScheduleFastCache() :array|\Exception {
+    protected function dependencyClassesForScheduleFastCache() :array|\Exception {
         return [
             new ItemsFastCache(new FastCacheService, new ItemsGet(new ClientItems(new HttpService))),
         ];
