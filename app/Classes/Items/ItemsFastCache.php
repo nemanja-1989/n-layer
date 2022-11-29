@@ -36,7 +36,7 @@ class ItemsFastCache implements FastCacheDependency {
     private function fastCacheItems() {
         try{
             $this->iterateItems(json_decode($this->items->getItems(), TRUE));
-            $this->fastCacheService->getService()->set('/v1/items', $this->items->getItems());
+            $this->fastCacheService->getService()->set('movies', $this->items->getItems());
         }catch(\Exception $e) {
             return $e->getMessage();
         }
@@ -48,7 +48,7 @@ class ItemsFastCache implements FastCacheDependency {
      */
     private function iterateItems($items) {
         foreach($items as $item) {
-            $this->fastCacheService->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
+            $this->fastCacheService->getService()->set('movies' . $item['id'] , json_encode($item));
         }
     }
 

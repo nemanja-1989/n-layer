@@ -1,5 +1,9 @@
-<?php 
+<?php
+use App\Classes\Items\ItemsGet;
+use App\Services\FastCacheService;
 use App\Services\RedisService;
+use App\Classes\Items\ClientItems;
+use App\Services\HttpService;
 ?>
 <!DOCTYPE html>
 <head>
@@ -8,9 +12,8 @@ use App\Services\RedisService;
 <body>
     <div>
         <?php 
-            $redis = new RedisService();
-            $redis = $redis->getService();
-            $items = json_decode($redis->get('/v1/items'), TRUE);
+            $items = new \App\Controllers\ItemsController(new RedisService, new FastCacheService, new ItemsGet(new ClientItems(new HttpService)));
+            $items = $items->getItems();
         ?>
             <?php if (!count($items)): ?>
                 <b>No item(s) found!</b>

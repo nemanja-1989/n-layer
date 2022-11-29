@@ -64,7 +64,7 @@ class Schedule extends ScheduleDependency {
     }
 
     private function checkFastCache() {
-        if($this->fastCacheService->getService()->get('/v1/items') === null) {
+        if($this->fastCacheService->getService()->get('movies') === null) {
             return true;
         }
         return false;
