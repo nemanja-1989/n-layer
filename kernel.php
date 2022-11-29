@@ -6,4 +6,3 @@ use \App\Console\Schedule;
 
 $schedule = new Schedule();
 $schedule->exe();
-?>

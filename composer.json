@@ -5,7 +5,8 @@
     "require": {
         "smottt/wideimage": "^1.1.4",
         "guzzlehttp/guzzle": "^7.5",
-        "predis/predis": "^2.0"
+        "predis/predis": "^2.0",
+        "phpfastcache/phpfastcache": "^9.1"
     },
     "license": "proprietary",
     "authors": [
