@@ -7,7 +7,7 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use ReflectionClass;
 
-class AppContainer implements ContainerInterface{
+class AppContainer implements ContainerInterface {
 
     protected array $instances = [];
 

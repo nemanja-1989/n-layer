@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Containers\AppContainer;
 use App\Interface\FastCacheDependency;
 use \App\Interface\RedisDependency;
 use App\Services\FastCacheService;
@@ -19,6 +20,7 @@ class Schedule extends ScheduleDependency {
         protected FastCacheService $fastCacheService,
     )
     {
+        parent::__construct(new AppContainer);
         $this->redisService = $redisService;
         $this->fastCacheService = $fastCacheService;
     }
@@ -58,16 +60,16 @@ class Schedule extends ScheduleDependency {
 
     private function checkRedisCache() :bool {
         if($this->redisService->getService()->get('/v1/items') === null) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     private function checkFastCache() {
         if($this->fastCacheService->getService()->get('movies') === null) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     /**
