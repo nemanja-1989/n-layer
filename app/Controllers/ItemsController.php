@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Classes\Items\ItemsGet;
+use App\Constants\Items\ItemsConstants;
 use App\Services\FastCacheService;
 use App\Services\RedisService;
 
@@ -31,12 +32,11 @@ class ItemsController {
      * @throws \Phpfastcache\Exceptions\PhpfastcacheSimpleCacheException
      */
     public function getItems() :array {
-        $items = null;
-        if($this->redisService->getService()->get('/v1/items') !== null) {
-            $items = $this->redisService->getService()->get('/v1/items');
+        if($this->redisService->getService()->get(ItemsConstants::ITEMS_CACHE) !== null) {
+            $items = $this->redisService->getService()->get(ItemsConstants::ITEMS_CACHE);
         }
-        else if($this->fastCacheService->getService()->get('movies') !== null) {
-            $items = $this->fastCacheService->getService()->get('movies');
+        else if($this->fastCacheService->getService()->get(ItemsConstants::ITEMS_CACHE) !== null) {
+            $items = $this->fastCacheService->getService()->get(ItemsConstants::ITEMS_CACHE);
         }
         else {
             $items = $this->itemsGet->getItems();
@@ -51,11 +51,11 @@ class ItemsController {
      */
     public function getSingleItem($id) :array {
         $item = null;
-        if($this->redisService->getService()->get('/v1/items/' . $id) !== null) {
-            $item = $this->redisService->getService()->get('/v1/items/' . $id);
+        if($this->redisService->getService()->get(ItemsConstants::itemCache($id)) !== null) {
+            $item = $this->redisService->getService()->get(ItemsConstants::itemCache($id));
         }
-        else if($this->fastCacheService->getService()->get('movies' . $id) !== null) {
-            $item = $this->fastCacheService->getService()->get('movies' . $id);
+        else if($this->fastCacheService->getService()->get(ItemsConstants::itemCache($id)) !== null) {
+            $item = $this->fastCacheService->getService()->get(ItemsConstants::itemCache($id));
         }
         else {
             $item = $this->itemsGet->getSingleItems($id);

@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Constants\Items\ItemsConstants;
 use App\Containers\AppContainer;
 use App\Interface\FastCacheDependency;
 use \App\Interface\RedisDependency;
@@ -10,19 +11,9 @@ use App\Services\RedisService;
 
 class Schedule extends ScheduleDependency {
 
-    /**
-     * @param RedisService $redisService
-     * @param FastCacheService $fastCacheService
-     */
-    public function __construct
-    (
-        protected RedisService $redisService,
-        protected FastCacheService $fastCacheService,
-    )
+    public function __construct()
     {
         parent::__construct(new AppContainer);
-        $this->redisService = $redisService;
-        $this->fastCacheService = $fastCacheService;
     }
     /**
      * @param RedisDependency $redisDependency
@@ -59,14 +50,14 @@ class Schedule extends ScheduleDependency {
     }
 
     private function checkRedisCache() :bool {
-        if($this->redisService->getService()->get('/v1/items') === null) {
+        if($this->container->get(RedisService::class)->getService()->get(ItemsConstants::ITEMS_CACHE) === null) {
             return false;
         }
         return true;
     }
 
     private function checkFastCache() {
-        if($this->fastCacheService->getService()->get('movies') === null) {
+        if($this->container->get(FastCacheService::class)->getService()->get(ItemsConstants::ITEMS_CACHE) === null) {
             return false;
         }
         return true;
@@ -75,12 +66,14 @@ class Schedule extends ScheduleDependency {
     /**
      * @return void
      */
-    public function exe() :void {
-        if($this->checkRedisCache() === false || $this->checkFastCache() === false) {
+    public function exe() {
+        $redisCheckCache = $this->checkRedisCache();
+        $fastCacheCheckCache = $this->checkFastCache();
+        if($redisCheckCache === false || $fastCacheCheckCache === false) {
             $this->exeRedis();
-            if($this->checkRedisCache() === false) {
+            if($redisCheckCache === false) {
                 $this->exeFastCache();
             }
-        }
+        } 
     }
 }   

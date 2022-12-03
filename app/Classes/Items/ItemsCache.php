@@ -4,6 +4,7 @@ namespace App\Classes\Items;
 
 require dirname(__DIR__) . '/../Interface/RedisDependency.php';
 
+use App\Constants\Items\ItemsConstants;
 use App\Interface\RedisDependency;
 use App\Services\RedisService;
 
@@ -36,7 +37,7 @@ class ItemsCache implements RedisDependency {
     private function cacheItems() {
         try{
             $this->iterateItems(json_decode($this->items->getItems(), TRUE));
-            $this->redisService->getService()->set('/v1/items', $this->items->getItems());
+            $this->redisService->getService()->set(ItemsConstants::ITEMS_CACHE, $this->items->getItems());
         }catch(\Exception $e) {
             return $e->getMessage();
         }
@@ -48,7 +49,7 @@ class ItemsCache implements RedisDependency {
      */
     private function iterateItems($items) {
         foreach($items as $item) {
-            $this->redisService->getService()->set('/v1/items/' . $item['id'] , json_encode($item));
+            $this->redisService->getService()->set(ItemsConstants::itemCache($item['id']) , json_encode($item));
         }
     }
 
