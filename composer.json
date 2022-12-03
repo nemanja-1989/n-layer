@@ -6,7 +6,8 @@
         "smottt/wideimage": "^1.1.4",
         "guzzlehttp/guzzle": "^7.5",
         "predis/predis": "^2.0",
-        "phpfastcache/phpfastcache": "^9.1"
+        "phpfastcache/phpfastcache": "^9.1",
+        "psr/container": "^2.0"
     },
     "license": "proprietary",
     "authors": [

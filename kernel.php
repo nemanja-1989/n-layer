@@ -3,8 +3,8 @@
 require './vendor/autoload.php';
 
 use \App\Console\Schedule;
-use App\Services\FastCacheService;
-use App\Services\RedisService;
+use App\Containers\AppContainer;
 
-$schedule = new Schedule(new RedisService, new FastCacheService);
+$container = new AppContainer();
+$schedule = $container->get(Schedule::class);
 $schedule->exe();
